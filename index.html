@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript негіздері</title>
+</head>
+<body>
+
+<h1>JavaScript негіздері: 10 тапсырма</h1>
+
+<script>
+
+console.log("1. СТУДЕНТ ТУРАЛЫ АҚПАРАТ");
+
+let name = prompt("Аты-жөніңізді енгізіңіз:");
+let age = Number(prompt("Жасыңызды енгізіңіз:"));
+let profession = prompt("Мамандығыңызды енгізіңіз:");
+
+console.log("Аты-жөні:", name);
+console.log("Жасы:", age);
+console.log("Мамандығы:", profession);
+
+if (age > 18) {
+    console.log("Ересек студент");
+} else {
+    console.log("Кәмелетке толмаған студент");
+}
+
+
+console.log("2. ЕКІ САНМЕН ЖҰМЫС");
+
+let num1 = Number(prompt("Бірінші санды енгізіңіз:"));
+let num2 = Number(prompt("Екінші санды енгізіңіз:"));
+
+console.log("Қосынды:", num1 + num2);
+console.log("Айырма:", num1 - num2);
+console.log("Көбейтінді:", num1 * num2);
+
+if (num2 !== 0) {
+    console.log("Бөлінді:", num1 / num2);
+} else {
+    console.log("Нөлге бөлуге болмайды");
+}
+
+if (num1 > num2) {
+    console.log("Бірінші сан үлкен");
+} else if (num2 > num1) {
+    console.log("Екінші сан үлкен");
+} else {
+    console.log("Сандар тең");
+}
+
+
+console.log("3. САН АНАЛИЗАТОРЫ");
+
+let number = Number(prompt("Бір бүтін сан енгізіңіз:"));
+
+if (number > 0) {
+    console.log("Сан оң");
+} else if (number < 0) {
+    console.log("Сан теріс");
+} else {
+    console.log("Сан нөл");
+}
+
+if (number % 2 === 0) {
+    console.log("Жұп сан");
+} else {
+    console.log("Тақ сан");
+}
+
+if (number % 10 === 0) {
+    console.log("10-ға бөлінеді");
+} else {
+    console.log("10-ға бөлінбейді");
+}
+
+
+console.log("4. СТУДЕНТТІҢ ҚОРЫТЫНДЫ БАҒАСЫ");
+
+let grade1 = Number(prompt("1-пән бағасы:"));
+let grade2 = Number(prompt("2-пән бағасы:"));
+let grade3 = Number(prompt("3-пән бағасы:"));
+let attendance = Number(prompt("Сабаққа қатысу пайызы:"));
+
+let average = (grade1 + grade2 + grade3) / 3;
+
+console.log("Орташа балл:", average.toFixed(2));
+
+if (average >= 90) {
+    console.log("Өте жақсы");
+} else if (average >= 75) {
+    console.log("Жақсы");
+} else if (average >= 50) {
+    console.log("Қанағаттанарлық");
+} else {
+    console.log("Қанағаттанарлықсыз");
+}
+
+if (average > 50 && attendance > 75) {
+    console.log("Емтиханға жіберілді");
+} else {
+    console.log("Емтиханға жіберілмеді");
+}
+
+
+console.log("5. ИНТЕРНЕТ-ДҮКЕН");
+
+let price = Number(prompt("Тауар бағасын енгізіңіз:"));
+let quantity = Number(prompt("Тауар санын енгізіңіз:"));
+
+let total = price * quantity;
+let discount = 0;
+
+if (total > 50000) {
+    discount = 15;
+} else if (total > 30000) {
+    discount = 10;
+}
+
+let discountMoney = total * discount / 100;
+let finalPrice = total - discountMoney;
+
+console.log("Жалпы сома:", total, "тг");
+console.log("Жеңілдік:", discount + "%");
+console.log("Жеңілдік сомасы:", discountMoney, "тг");
+console.log("Соңғы төленетін сома:", finalPrice, "тг");
+
+
+console.log("6. УАҚЫТТЫ АНЫҚТАУ");
+
+let hour = Number(prompt("Сағат мәнін енгізіңіз (0-23):"));
+
+if (hour < 0 || hour > 23 || !Number.isInteger(hour)) {
+    console.log("Қате уақыт");
+} else if (hour >= 6 && hour <= 11) {
+    console.log("Қайырлы таң");
+} else if (hour >= 12 && hour <= 17) {
+    console.log("Қайырлы күн");
+} else if (hour >= 18 && hour <= 22) {
+    console.log("Қайырлы кеш");
+} else {
+    console.log("Қайырлы түн");
+}
+
+
+console.log("7. ҮШ САНДЫ ТАЛДАУ");
+
+let a = Number(prompt("Бірінші сан:"));
+let b = Number(prompt("Екінші сан:"));
+let c = Number(prompt("Үшінші сан:"));
+
+let max;
+let min;
+
+if (a >= b && a >= c) {
+    max = a;
+} else if (b >= a && b >= c) {
+    max = b;
+} else {
+    max = c;
+}
+
+if (a <= b && a <= c) {
+    min = a;
+} else if (b <= a && b <= c) {
+    min = b;
+} else {
+    min = c;
+}
+
+let average3 = (a + b + c) / 3;
+let evenCount = 0;
+
+if (a % 2 === 0) {
+    evenCount++;
+}
+
+if (b % 2 === 0) {
+    evenCount++;
+}
+
+if (c % 2 === 0) {
+    evenCount++;
+}
+
+console.log("Ең үлкен сан:", max);
+console.log("Ең кіші сан:", min);
+console.log("Орташа мән:", average3);
+console.log("Жұп сандар саны:", evenCount);
+
+
+console.log("8. БАНК НЕСИЕ ЖҮЙЕСІ");
+
+let bankAge = Number(prompt("Жасыңызды енгізіңіз:"));
+let salary = Number(prompt("Айлық табысыңызды енгізіңіз:"));
+let experience = Number(prompt("Жұмыс өтіліңізді енгізіңіз (жыл):"));
+
+if (bankAge >= 21 && salary >= 250000 && experience >= 1) {
+    console.log("Несие мақұлданды");
+} else {
+    console.log("Несие берілмейді");
+}
+
+
+console.log("9. ЕМТИХАН НӘТИЖЕСІ");
+
+let exam = Number(prompt("Емтихан балын енгізіңіз:"));
+let practical = Number(prompt("Практикалық жұмыс балын енгізіңіз:"));
+
+if (exam > 50 && practical > 60) {
+    if (exam > 90) {
+        console.log("Өте жақсы нәтиже");
+    } else if (exam >= 75) {
+        console.log("Жақсы нәтиже");
+    } else {
+        console.log("Өтті");
+    }
+} else {
+    console.log("Өтпеді");
+}
+
+
+console.log("10. СТУДЕНТТІ БАҒАЛАУ ЖҮЙЕСІ");
+
+let studentName = prompt("Аты-жөніңізді енгізіңіз:");
+let studentAge = Number(prompt("Жасыңызды енгізіңіз:"));
+
+let subject1 = Number(prompt("1-пән бағасы:"));
+let subject2 = Number(prompt("2-пән бағасы:"));
+let subject3 = Number(prompt("3-пән бағасы:"));
+
+let studentAttendance = Number(prompt("Сабаққа қатысу пайызын енгізіңіз:"));
+let studentCard = prompt("Студенттік билетіңіз бар ма? (иә/жоқ)");
+
+let studentAverage = (subject1 + subject2 + subject3) / 3;
+
+let highest;
+let lowest;
+
+if (subject1 >= subject2 && subject1 >= subject3) {
+    highest = subject1;
+} else if (subject2 >= subject1 && subject2 >= subject3) {
+    highest = subject2;
+} else {
+    highest = subject3;
+}
+
+if (subject1 <= subject2 && subject1 <= subject3) {
+    lowest = subject1;
+} else if (subject2 <= subject1 && subject2 <= subject3) {
+    lowest = subject2;
+} else {
+    lowest = subject3;
+}
+
+console.log("Аты-жөні:", studentName);
+console.log("Жасы:", studentAge);
+console.log("Орташа балл:", studentAverage.toFixed(2));
+console.log("Ең жоғары баға:", highest);
+console.log("Ең төмен баға:", lowest);
+
+if (studentAverage >= 90) {
+    console.log("Оқу нәтижесі: Өте жақсы");
+} else if (studentAverage >= 75) {
+    console.log("Оқу нәтижесі: Жақсы");
+} else if (studentAverage >= 50) {
+    console.log("Оқу нәтижесі: Қанағаттанарлық");
+} else {
+    console.log("Оқу нәтижесі: Қанағаттанарлықсыз");
+}
+
+if (studentAverage > 50 && studentAttendance > 75) {
+    console.log("Емтиханға жіберілді");
+} else {
+    console.log("Емтиханға жіберілмеді");
+}
+
+if (studentAverage > 90 || studentAttendance > 90) {
+    console.log("Үздік студент");
+}
+
+if (studentCard.toLowerCase() === "иә") {
+    console.log("Студенттік билет бар");
+} else {
+    console.log("Студенттік билет жоқ");
+}
+
+console.log("Барлық 10 тапсырма аяқталды");
+
+</script>
+
+</body>
+</html>
